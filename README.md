@@ -72,6 +72,9 @@ Cargo deny 是一个 Cargo 插件，可以用于检查依赖的安全性。
 
 ```bash
 cargo install --locked cargo-deny
+
+# 重新生成配置文件
+cargo deny init
 ```
 
 ### 安装 typos
