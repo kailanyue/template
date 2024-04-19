@@ -60,6 +60,10 @@ pipx install pre-commit
 # 首次运行
 pre-commit install
 
+# 修改添加到暂存区
+git add filename
+git add .
+
 # 运行提交检查
 git commit -a
 ```
