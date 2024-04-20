@@ -81,6 +81,9 @@ cargo install --locked cargo-deny
 
 # 重新生成配置文件
 cargo deny init
+
+# 检查
+cargo deny check -d
 ```
 
 ### 安装 typos
@@ -97,6 +100,12 @@ git cliff 是一个生成 changelog 的工具。
 
 ```bash
 cargo install git-cliff
+
+# 初始化 git-cliff
+git-cliff init
+
+# 生成 changelog
+git-cliff -o CHANGELOG.md
 ```
 
 ### 安装 cargo nextest
