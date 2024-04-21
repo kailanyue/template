@@ -84,6 +84,10 @@ cargo deny init
 
 # 检查
 cargo deny check -d
+
+# Windows 中换行符解决
+git config --global --get core.autocrlf
+git config --local --get core.autocrlf
 ```
 
 ### 安装 typos
