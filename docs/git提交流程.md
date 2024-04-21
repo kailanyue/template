@@ -2,12 +2,13 @@
 ## Windows 中换行符解决
 ### 全局配置
 ```sh
-git config --global --get core.autocrlf
+git config --global core.autocrlf true
+
 ```
 
 ### 本地项目配置
 ```sh
-git config --local --get core.autocrlf
+git config --local core.autocrlf true
 ```
 
 ## git 提交流程
@@ -28,13 +29,16 @@ git commit -m "提交内容"
 
 ## tag
 ```sh
+# 更新 CHANGELOG
+git-cliff -o CHANGELOG.md
+
 # 添加 tag
 git tag -a v1.7-csv
 git push -u origin v1.7-csv
 
 # 删除 tag
 git tag -d v1.7-csv
-git push origin --delete v1.7-csv
+git push -d origin v1.7-csv
 ```
 ## 提交消息前缀
 在 Git 中，有一些常见的提交消息前缀，可以帮助你更好地描述你的提交。以下是一些常见的前缀：
