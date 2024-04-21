@@ -33,11 +33,11 @@ git commit -m "提交内容"
 git-cliff -o CHANGELOG.md
 
 # 添加 tag
-git tag -a v1.7-csv
-git push -u origin v1.7-csv
+git tag -a v1.0
+git push -u origin v1.0
 
 # 删除 tag
-git tag -d v1.7-csv
+git tag -d v1.0
 git push -d origin v1.7-csv
 ```
 ## 提交消息前缀
