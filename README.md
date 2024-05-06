@@ -35,6 +35,7 @@ cargo install git-cliff
 cargo install cargo-nextest --locked
 cargo install cargo-update
 cargo install tokei
+cargo install cargo-tarpaulin
 ```
 ### 安装 cargo generate
 
@@ -129,6 +130,28 @@ cargo install tokei
 tokei .
 ```
 
+### 安装 cargo-tarpaulin
+```bash
+cargo install cargo-tarpaulin
+```
+
+在 `.pre-commit-config.yaml` 文件的末尾中添加如下内容：
+
+```yaml
+      - id: cargo-tarpaulin
+        name: cargo tarpaulin
+        description: unit test for the project
+        entry: bash -c 'cargo tarpaulin --out Html --fail-under 60'
+        language: rust
+        files: \.rs$
+        pass_filenames: false
+```
+> 60 表示覆盖率不能低于 60%
+
+使用以下命令在根目录生成测试报告
+```bash
+cargo tarpaulin --out Html
+```
 
 ### 安装 cargo-update
 要更新使用 `cargo install` 安装的包，您可以使用以下方法：
