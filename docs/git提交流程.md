@@ -24,6 +24,9 @@ cargo fmt .
 # 2.cargo deny 检查
 cargo deny check -d
 
+# cargo-deny报错failed to open advisory database
+cargo deny check advisories
+
 # 3.测试覆盖检查
 cargo tarpaulin --out Html
 
@@ -70,4 +73,13 @@ git push -u origin v1.0
 # 2.删除 tag
 git tag -d v1.0
 git push -d origin v1.7-csv
+
+# 3.删除 commit
+git reset --soft HEAD~1
+
+# 删除倒数第3个 commit
+git rebase -i HEAD~4
+
+# 推送到 Github
+git push origin --force
 ```
