@@ -9,6 +9,9 @@
 [Shared Compilation Cache](https://github.com/mozilla/sccache)
 
 SCCache 是一个类似 ccache 的编译器缓存工具。它用作编译器包装器，并尽可能避免编译，将缓存的结果存储在本地磁盘或多个云存储后端之一中。
+```sh
+cargo install sccache
+```
 
 ### 修改 Cache location
 
@@ -31,10 +34,10 @@ sccache -s
 ### 修改 Cache Size
 ```sh
 # linux
-export SCCACHE_CACHE_SIZE=20G
+export SCCACHE_CACHE_SIZE="20G"
 
 # windows 通过用户环境变量设置 SCCACHE_CACHE_SIZE
-set SCCACHE_CACHE_SIZE=20G
+set SCCACHE_CACHE_SIZE="20G"
 
 # 重启服务
 ```

@@ -28,6 +28,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 
 ```bash
+cargo install sccache
 cargo install cargo-generate
 cargo install cargo-deny --locked
 cargo install typos-cli
