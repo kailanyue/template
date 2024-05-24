@@ -1,7 +1,3 @@
-# Geektime Rust 语言训练营
-
-## 环境设置
-
 ### 安装 Rust
 
 ```bash
@@ -26,34 +22,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 - vscode-icons: 图标优化
 - YAML: YAML 文件支持
 
-
-```bash
-cargo install sccache
-cargo install cargo-generate
-cargo install cargo-deny --locked
-cargo install typos-cli
-cargo install git-cliff
-cargo install cargo-nextest --locked
-cargo install cargo-update
-cargo install tokei
-cargo install cargo-tarpaulin
-```
-### 安装 cargo generate
-
-cargo generate 是一个用于生成项目模板的工具。它可以使用已有的 github repo 作为模版生成新的项目。
-
-```bash
-cargo install cargo-generate
-```
-
-新的项目会使用 `kailanyue/template` 模版生成基本的代码：
-
-```bash
-cargo generate kailanyue/template
-```
-
 ### 安装 pre-commit
-
 pre-commit 是一个代码检查工具，可以在提交代码前进行代码检查。
 
 ```bash
@@ -71,11 +40,41 @@ git add .
 # 运行提交检查
 git commit -a
 ```
-
 安装成功后运行 `pre-commit install` 即可。
 
-### 安装 Cargo deny
+### cargo install
 
+```bash
+cargo install cargo-deny --locked
+cargo install cargo-expand
+cargo install cargo-generate
+cargo install cargo-nextest --locked
+cargo install cargo-tarpaulin
+cargo install cargo-update
+cargo install git-cliff
+cargo install sccache
+cargo install tokei
+cargo install typos-cli
+```
+
+### cargo-expand
+`cargo-expand` 是一个 Rust 工具，用于展开和查看 Rust 宏的展开结果。它可以帮助开发者理解宏的行为，调试宏相关的问题，以及查看编译器在宏展开后生成的代码。
+
+1. **宏展开**：`cargo-expand` 可以展开宏调用，显示宏展开后的完整代码。这对于理解复杂的宏和调试宏相关的问题非常有用。
+2. **代码生成**：它可以查看由属性宏（如 `#[derive]` 和 `#[tokio::main]`）生成的代码，帮助开发者理解这些宏背后的实现细节。
+3. **调试**：当你遇到编译错误或行为异常时，查看宏展开后的代码可以帮助你快速定位问题。
+
+
+### cargo generate
+cargo generate 是一个用于生成项目模板的工具。它可以使用已有的 github repo 作为模版生成新的项目。
+
+新的项目会使用 `kailanyue/template` 模版生成基本的代码：
+
+```bash
+cargo generate kailanyue/template
+```
+
+### Cargo deny
 Cargo deny 是一个 Cargo 插件，可以用于检查依赖的安全性。
 
 ```bash
@@ -87,21 +86,18 @@ cargo deny init
 # 检查
 cargo deny check -d
 
+# cargo-deny报错failed to open advisory database
+cargo deny check advisories
 # Windows 中换行符解决
 git config --global --get core.autocrlf
 git config --local --get core.autocrlf
 ```
 
-### 安装 typos
-
+### typos
 typos 是一个拼写检查工具。
 
-```bash
-cargo install typos-cli
-```
 
-### 安装 git cliff
-
+### git cliff
 git cliff 是一个生成 changelog 的工具。
 
 ```bash
@@ -114,28 +110,21 @@ git-cliff init
 git-cliff -o CHANGELOG.md
 ```
 
-### 安装 cargo nextest
-
+### cargo nextest
 cargo nextest 是一个 Rust 增强测试工具。
 
 ```bash
-cargo install cargo-nextest --locked
+cargo nextest run
 ```
 
-### 安装 tokei
+### tokei
 Tokei is a program that displays statistics about your code.
 
 ```bash
-cargo install tokei
-
 tokei .
 ```
 
-### 安装 cargo-tarpaulin
-```bash
-cargo install cargo-tarpaulin
-```
-
+### cargo-tarpaulin
 在 `.pre-commit-config.yaml` 文件的末尾中添加如下内容：
 
 ```yaml
@@ -154,7 +143,7 @@ cargo install cargo-tarpaulin
 cargo tarpaulin --out Html
 ```
 
-### 安装 cargo-update
+### cargo-update
 要更新使用 `cargo install` 安装的包，您可以使用以下方法：
 
 1. **使用 cargo-update 工具**：
@@ -179,8 +168,6 @@ cargo tarpaulin --out Html
       cargo install --list
       ```
       然后根据列表中的包名选择要更新的包。
-
-
 
 ### cargo 中 locked 参数的含义
 `--locked` 是 `cargo install` 命令的一个选项，用于强制使用已打包的 `Cargo.lock` 文件。具体含义如下：
