@@ -1,3 +1,4 @@
+## Rust 开发环境配置
 ### 安装 Rust
 
 ```bash
@@ -177,3 +178,15 @@ cargo tarpaulin --out Html
 - 如果您希望使用发布软件包时的确切依赖项版本，或者需要确保构建与特定版本的依赖项一致，可以使用 `--locked`。
 
 请注意，使用 `--locked` 的缺点是您将不会收到任何依赖项的修复或更新。如果软件包中的 `Cargo.lock` 文件不可用，Cargo 将继续重新计算依赖项版本。
+
+
+## C++ 开发环境配置
+
+### 安装 CMake
+https://cmake.org/download/
+
+### 安装 llvm + clang
+https://github.com/llvm/llvm-project/releases
+
+### 安装 NASM
+https://www.nasm.us/
