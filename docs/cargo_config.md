@@ -1,6 +1,19 @@
-## RsProxy.cn
+## RsProxy
 
 [A high speed crates.io mirror](https://rsproxy.cn/)
+
+## Cargo Home
+默认情况下，Cargo Home 所在的目录是 `$HOME/.cargo/`，
+
+我们也可以通过修改 CARGO_HOME 环境变量的方式来重新设定该目录的位置。若你需要在项目中通过代码的方式来获取 CARGO_HOME ，home 包提供了相应的 API。其子目录如下
+```sh
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         2024/6/9     11:03                cache
+d-----         2024/6/9     11:03                index
+d-----         2024/6/9     11:03                src
+-a----         2024/6/9     11:03            177 CACHEDIR.TAG
+```
 
 ## 提升 cargo 编译速度
 使用 `rustflags` 传递自定义标志给 Cargo 的 rustc 编译器
