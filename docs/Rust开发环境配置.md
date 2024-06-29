@@ -184,9 +184,17 @@ cargo tarpaulin --out Html
 
 ### 安装 CMake
 https://cmake.org/download/
-
+```sh
+C:\Develop\cmake\bin
+```
 ### 安装 llvm + clang
 https://github.com/llvm/llvm-project/releases
+```sh
+C:\Develop\clang+llvm\bin
+```
 
 ### 安装 NASM
 https://www.nasm.us/
+```sh
+C:\Develop\nasm
+```
