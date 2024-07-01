@@ -1,33 +1,9 @@
-## Rust 开发环境配置
-### 安装 Rust
-
-```bash
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-```
-
-### 安装 VSCode 插件
-
-- crates: Rust 包管理
-- Even Better TOML: TOML 文件支持
-- Better Comments: 优化注释显示
-- Error Lens: 错误提示优化
-- GitLens: Git 增强
-- Github Copilot: 代码提示
-- indent-rainbow: 缩进显示优化
-- Prettier - Code formatter: 代码格式化
-- REST client: REST API 调试
-- rust-analyzer: Rust 语言支持
-- Rust Test lens: Rust 测试支持
-- Rust Test Explorer: Rust 测试概览
-- TODO Highlight: TODO 高亮
-- vscode-icons: 图标优化
-- YAML: YAML 文件支持
-
 ### 安装 pre-commit
 pre-commit 是一个代码检查工具，可以在提交代码前进行代码检查。
 
 ```bash
-pipx install pre-commit
+pip install pre-commit
+conda install pre-commit
 ```
 
 ```bash
@@ -43,7 +19,7 @@ git commit -a
 ```
 安装成功后运行 `pre-commit install` 即可。
 
-### cargo install
+### cargo 包安装
 
 ```bash
 cargo install cargo-deny --locked
@@ -55,10 +31,11 @@ cargo install cargo-update
 cargo install git-cliff
 cargo install sccache
 cargo install tokei
+cargo install tokio-console --locked
 cargo install typos-cli
 ```
 
-### cargo-expand
+#### cargo-expand
 `cargo-expand` 是一个 Rust 工具，用于展开和查看 Rust 宏的展开结果。它可以帮助开发者理解宏的行为，调试宏相关的问题，以及查看编译器在宏展开后生成的代码。
 
 1. **宏展开**：`cargo-expand` 可以展开宏调用，显示宏展开后的完整代码。这对于理解复杂的宏和调试宏相关的问题非常有用。
@@ -89,6 +66,7 @@ cargo deny check -d
 
 # cargo-deny报错failed to open advisory database
 cargo deny check advisories
+
 # Windows 中换行符解决
 git config --global --get core.autocrlf
 git config --local --get core.autocrlf
@@ -178,23 +156,3 @@ cargo tarpaulin --out Html
 - 如果您希望使用发布软件包时的确切依赖项版本，或者需要确保构建与特定版本的依赖项一致，可以使用 `--locked`。
 
 请注意，使用 `--locked` 的缺点是您将不会收到任何依赖项的修复或更新。如果软件包中的 `Cargo.lock` 文件不可用，Cargo 将继续重新计算依赖项版本。
-
-
-## C++ 开发环境配置
-
-### 安装 CMake
-https://cmake.org/download/
-```sh
-C:\Develop\cmake\bin
-```
-### 安装 llvm + clang
-https://github.com/llvm/llvm-project/releases
-```sh
-C:\Develop\clang+llvm\bin
-```
-
-### 安装 NASM
-https://www.nasm.us/
-```sh
-C:\Develop\nasm
-```

@@ -1,0 +1,43 @@
+## 1 安装 VSCode 插件
+
+- crates: Rust 包管理
+- Even Better TOML: TOML 文件支持
+- Better Comments: 优化注释显示
+- Error Lens: 错误提示优化
+- GitLens: Git 增强
+- Github Copilot: 代码提示
+- indent-rainbow: 缩进显示优化
+- Prettier - Code formatter: 代码格式化
+- REST client: REST API 调试
+- rust-analyzer: Rust 语言支持
+- Rust Test lens: Rust 测试支持
+- Rust Test Explorer: Rust 测试概览
+- TODO Highlight: TODO 高亮
+- vscode-icons: 图标优化
+- YAML: YAML 文件支持
+
+## 2 修改注释字体颜色
+
+第二种方式是在 vscode 的设置页面中，搜索 "editor.tokenColorCustomizations" 选项，然后点击编辑器旁边的笔图标进行编辑，添加类似于以下的代码：
+
+```json
+"editor.tokenColorCustomizations": {
+    "comments": "#ff4f81" // 注释
+}
+```
+
+## 3 取消中文注释斜体
+
+`C:\Users\$UserName$\.vscode\extensions\akamud.vscode-theme-onelight-2.3.0\themes`
+打开该目录下的 OneLight.json 文件，搜索该项 `"name": "Comment",`
+将"fontStyle"字段设置为空值即可取消注释中文的斜体样式。在"foreground"字段后课自定义16进制颜色码，自定义注释颜色。
+
+```json
+{
+  "name": "Comments",
+  "scope": "comment, punctuation.definition.comment",
+  "settings": {
+	"fontStyle": "",            // 置为空值
+	"foreground": "#00CACA"     // 自定义16进制颜色码
+  }
+```

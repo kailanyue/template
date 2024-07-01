@@ -1,10 +1,10 @@
-## 添加依赖
+## 1 添加依赖
 ```sh
 cargo add tracing
 cargo add tracing-subscriber --features=env-filter
 ```
 
-## 在代码中添加日志
+## 2 在代码中添加日志
 ```rs
 use tracing::info;
 
@@ -15,7 +15,7 @@ fn main() {
 }
 ```
 
-## 终端运行配置
+## 3 终端运行配置
 ```sh
 # windows 系统执行命令
 $Env:RUST_LOG="debug"

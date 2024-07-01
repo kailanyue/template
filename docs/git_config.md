@@ -1,10 +1,10 @@
-## 使用模板克隆工程
+## 1 使用模板克隆工程
 
 ```sh
 cargo generate kailanyue/template
 ```
 
-## 修改工程名
+## 2 修改工程名
 
 ```toml
 [package]
@@ -14,25 +14,14 @@ authors = ["kailan yue <yuekailan@gmail.com>"]
 edition = "2021"
 ```
 
-## git 配置
+## 3 git 配置
 
-### 添加作者信息
+### 3.1 添加作者信息
 ```sh
 git config --local user.name "kailanyue"
 git config --local user.email "yuekailan@163.com"
 ```
-
-### Windows 中换行符解决-全局配置
-```sh
-git config --global core.autocrlf true
-```
-
-### Windows 中换行符解决-本地项目配置
-```sh
-git config --local core.autocrlf true
-```
-
-### pre-commit 配置
+### 3.2 pre-commit 配置
 ```sh
 # 1.安装 pre-commit
 pre-commit install
@@ -41,7 +30,7 @@ pre-commit install
 cargo deny check advisories
 ```
 
-### git 提交流程
+### 3.3 git 提交流程
 ```sh
 # 0.修改 cliff 配置
 postprocessors = [
@@ -66,7 +55,17 @@ git add .
 git commit -m "提交内容"
 ```
 
-## 提交消息前缀
+### 3.4 Windows 中换行符解决-全局配置
+```sh
+git config --global core.autocrlf true
+```
+
+### 3.5 Windows 中换行符解决-本地项目配置
+```sh
+git config --local core.autocrlf true
+```
+
+## 4 提交消息前缀
 在 Git 中，有一些常见的提交消息前缀，可以帮助你更好地描述你的提交。以下是一些常见的前缀：
 
 1. **feat**: 用于引入新功能。例如：`feat: 添加用户登录功能`
@@ -86,7 +85,7 @@ git commit -m "feat: Add new feature XYZ"
 git commit -m "fix: Fix issue ABC"
 ```
 
-## 添加 tag 并提交
+## 5 添加 tag 并提交
 ```sh
 # 0.更新 CHANGELOG
 git-cliff -o CHANGELOG.md
