@@ -14,6 +14,7 @@ d-----         2024/6/9     11:03                index
 d-----         2024/6/9     11:03                src
 -a----         2024/6/9     11:03            177 CACHEDIR.TAG
 ```
+> 需要将 Cargo.toml 文件复制到 CARGO_HOME 中，才能保证以下的配置生效
 
 ## 提升 cargo 编译速度
 使用 `rustflags` 传递自定义标志给 Cargo 的 rustc 编译器
