@@ -30,6 +30,7 @@ cargo install cargo-tarpaulin
 cargo install cargo-update
 cargo install git-cliff
 cargo install sccache
+cargo install sqlx-cli
 cargo install tokei
 cargo install tokio-console --locked
 cargo install typos-cli
@@ -101,6 +102,22 @@ Tokei is a program that displays statistics about your code.
 
 ```bash
 tokei .
+```
+### sqlx-cli
+SQLx's associated command-line utility for managing databases, migrations, and enabling "offline" mode with sqlx::query!() and friends.
+
+```sh
+# supports all databases supported by SQLx
+$ cargo install sqlx-cli
+
+# only for postgres
+$ cargo install sqlx-cli --no-default-features --features native-tls,postgres
+
+# use vendored OpenSSL (build from source)
+$ cargo install sqlx-cli --features openssl-vendored
+
+# use Rustls rather than OpenSSL (be sure to add the features for the databases you intend to use!)
+$ cargo install sqlx-cli --no-default-features --features rustls
 ```
 
 ### cargo-tarpaulin
