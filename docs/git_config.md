@@ -26,6 +26,10 @@ git config --local user.email "yuekailan@163.com"
 # 1.安装 pre-commit
 pre-commit install
 
+#
+cargo deny init
+cargo deny check
+
 # cargo-deny报错failed to open advisory database
 cargo deny check advisories
 ```
@@ -33,7 +37,7 @@ cargo deny check advisories
 ### 3.3 git 提交流程
 ```sh
 # 0.修改 cliff 配置
-postprocessors = [
+postprocessors = [r
     { pattern = '\$REPO', replace = "https://github.com/kailanyue/template" }, # replace repository URL
 ]
 

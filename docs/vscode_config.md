@@ -1,6 +1,9 @@
 ## 1 安装 VSCode 插件
 
-- crates: Rust 包管理
+- rust-analyzer: Rust 语言支持
+- ~~crates: Rust 包管理，[市场](https://marketplace.visualstudio.com/items?itemName=serayuzgur.crates)已弃用~~
+- crates-io: Rust 包管理，[市场](https://marketplace.visualstudio.com/items?itemName=BarbossHack.crates-io)
+- Dependi: 依赖管理工具，[市场](https://marketplace.visualstudio.com/items?itemName=fill-labs.dependi)，存在bug
 - Even Better TOML: TOML 文件支持
 - Better Comments: 优化注释显示
 - Error Lens: 错误提示优化
@@ -9,13 +12,13 @@
 - indent-rainbow: 缩进显示优化
 - Prettier - Code formatter: 代码格式化
 - REST client: REST API 调试
-- rust-analyzer: Rust 语言支持
 - Rust Test lens: Rust 测试支持
 - Rust Test Explorer: Rust 测试概览
 - TODO Highlight: TODO 高亮
 - vscode-icons: 图标优化
 - YAML: YAML 文件支持
-
+- Crabviz: [Crabviz](https://github.com/chanhx/crabviz) 利用语言服务器协议生成交互式调用图，帮助您直观地探索源代码。[市场](https://marketplace.visualstudio.com/items?itemName=chanhx.crabviz)
+- CodeViz: CodeViz builds a visual map of your codebase for faster understanding and navigation [市场](https://marketplace.visualstudio.com/items?itemName=CodeViz.codeviz&ssr=false#overview)
 ## 2 修改注释字体颜色
 
 第二种方式是在 vscode 的设置页面中，搜索 "editor.tokenColorCustomizations" 选项，然后点击编辑器旁边的笔图标进行编辑，添加类似于以下的代码：

@@ -25,15 +25,18 @@ git commit -a
 cargo install cargo-deny --locked
 cargo install cargo-expand
 cargo install cargo-generate
+cargo install cargo-machete
 cargo install cargo-nextest --locked
 cargo install cargo-tarpaulin
 cargo install cargo-update
 cargo install git-cliff
 cargo install sccache
-cargo install sqlx-cli
 cargo install tokei
 cargo install tokio-console --locked
 cargo install typos-cli
+cargo install sqlx-cli --no-default-features --features rustls
+cargo install --git https://github.com/astral-sh/rye rye
+cargo install dioxus-cli
 ```
 
 #### cargo-expand
@@ -51,6 +54,16 @@ cargo generate 是一个用于生成项目模板的工具。它可以使用已�
 
 ```bash
 cargo generate kailanyue/template
+```
+
+### Cargo machete
+`cargo-machete` 是一个 Cargo 工具，它以快速（但不精确）的方式检测 Rust 项目中未使用的依赖项
+在包含一个或多个 Rust 项目的目录中运行 cargo-machete（使用 Cargo 进行依赖管理）：
+```sh
+cd my-directory && cargo machete
+
+# alternatively
+cargo machete /absolute/path/to/my/directory
 ```
 
 ### Cargo deny
@@ -103,22 +116,6 @@ Tokei is a program that displays statistics about your code.
 ```bash
 tokei .
 ```
-### sqlx-cli
-SQLx's associated command-line utility for managing databases, migrations, and enabling "offline" mode with sqlx::query!() and friends.
-
-```sh
-# supports all databases supported by SQLx
-$ cargo install sqlx-cli
-
-# only for postgres
-$ cargo install sqlx-cli --no-default-features --features native-tls,postgres
-
-# use vendored OpenSSL (build from source)
-$ cargo install sqlx-cli --features openssl-vendored
-
-# use Rustls rather than OpenSSL (be sure to add the features for the databases you intend to use!)
-$ cargo install sqlx-cli --no-default-features --features rustls
-```
 
 ### cargo-tarpaulin
 在 `.pre-commit-config.yaml` 文件的末尾中添加如下内容：
@@ -143,27 +140,29 @@ cargo tarpaulin --out Html
 要更新使用 `cargo install` 安装的包，您可以使用以下方法：
 
 1. **使用 cargo-update 工具**：
-    - 首先，您需要安装 `cargo-update` 工具。如果您尚未安装它，可以运行以下命令：
-      ```
-      cargo install cargo-update
-      ```
-    - 然后，使用以下命令来更新所有已安装的包：
-      ```
-      cargo install-update -a
-      ```
-    - 这将检查您使用 `cargo install` 安装的所有内容，并将其更新为最新版本。
+- 首先，您需要安装 `cargo-update` 工具。如果您尚未安装它，可以运行以下命令：
+```
+cargo install cargo-update
+```
+
+- 然后，使用以下命令来更新所有已安装的包：
+```
+cargo install-update -a
+```
+- 这将检查您使用 `cargo install` 安装的所有内容，并将其更新为最新版本。
+
 
 2. **手动更新**：
-    - 如果您知道特定包的名称，您可以直接运行以下命令来更新它：
-      ```
-      cargo install --force 包名
-      ```
-      其中 `包名` 是您要更新的包的名称。
-    - 如果您不确定已安装的包的名称，您可以运行以下命令来列出所有已安装的包：
-      ```
-      cargo install --list
-      ```
-      然后根据列表中的包名选择要更新的包。
+- 如果您知道特定包的名称，您可以直接运行以下命令来更新它：
+```
+cargo install --force 包名
+```
+其中 `包名` 是您要更新的包的名称。
+- 如果您不确定已安装的包的名称，您可以运行以下命令来列出所有已安装的包：
+```
+cargo install --list
+```
+  然后根据列表中的包名选择要更新的包。
 
 ### cargo 中 locked 参数的含义
 `--locked` 是 `cargo install` 命令的一个选项，用于强制使用已打包的 `Cargo.lock` 文件。具体含义如下：
